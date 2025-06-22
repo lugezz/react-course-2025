@@ -29,7 +29,7 @@ const SelectedMovie =({isMovieID, setisMovieID, Movie, setselectedMovie}: Select
     
     return (
         <div className='absolute z-1'>
-            <h1 className='text-white'>SelectedMovie</h1>
+            <h1 className='text-white'>{ Movie.title }</h1>
             <button className='text-white' onClick={()=>{
                 setisMovieID(false) 
                 setselectedMovie(false)

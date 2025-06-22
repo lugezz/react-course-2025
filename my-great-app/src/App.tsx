@@ -2,20 +2,20 @@ import { useDebounce } from 'react-use';
 import { useEffect, useState } from 'react'
 
 import Search from '@components/Search.tsx';
-import Spinner from './components/Spinner.tsx';
-import MovieCard from './components/MovieCard.jsx';
-import SelectedMovie from './components/SelectedMovie.jsx';
+import Spinner from '@components/Spinner.tsx';
+import MovieCard from '@components/MovieCard.tsx'
+import SelectedMovie from '@components/SelectedMovie.tsx';
 
 const App = () =>{
   //useState hook allows for the tracking of states in a function component.
   // it includes a the curent state a function for changing the state and a base state that it starts out with
   const [searchTerm, setsearchTerm] = useState('');
-  const [errorMessage, seterrorMessage] = useState(null);
+  const [errorMessage, seterrorMessage] = useState('');
   const [movieList, setmovieList] = useState([]);
   const [trendingMovies, settrendingMovies] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   const [isMovieID, setisMovieID] = useState(false)
-  const [selectedMovie, setselectedMovie] = useState(false)
+  const [selectedMovie, setselectedMovie] = useState<any>(null);
   const [debouncedsearchTerm, setdebouncedsearchTerm] = useState('');
  
   useDebounce(() => setdebouncedsearchTerm(searchTerm), 500, [searchTerm])
@@ -62,7 +62,7 @@ const App = () =>{
     }
   }
 
-  const fetchSpecificMovie = async (isMovieID) =>{
+  const fetchSpecificMovie = async (isMovieID: boolean) =>{
     console.log(isMovieID)
     if(!isMovieID) return
     try{
