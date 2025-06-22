@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@app/*": ["src/*"],
+      "@config": ["src/config.ts"],
+      "@config/*": ["src/config/*"],
+      "@modules/*": ["src/modules/*"],
+      "@pages/*": ["src/pages/*"],
+      "@store/*": ["src/store/*"],
+      "@store": ["src/store"],
+      "@utils/*": ["src/utils/*"]
+    }
+  }
+}
